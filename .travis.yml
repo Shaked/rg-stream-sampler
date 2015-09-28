@@ -8,7 +8,6 @@ php:
 
 os:
 - linux
-- osx
 
 install:
 - make install
