@@ -9,7 +9,6 @@ There are probably more ways to solve this issue but I have focused on 2 common 
 - The second algorithm is called [Reservoir Sampling](https://en.wikipedia.org/wiki/Reservoir_sampling) which is known for this type of problems. Having said that, this algorithm might be tricky when it comes to multi threading and a large number of K. The complexity of the algorithm is O(N).
 
 [![Build Status](https://travis-ci.org/Shaked/rg-stream-sampler.png?branch=master)](https://travis-ci.org/Shaked/rg-stream-sampler)
-[![Coverage Status](https://coveralls.io/repos/Shaked/rg-stream-sampler/badge.png)](https://coveralls.io/r/Shaked/rg-stream-sampler)
 
 ## Usage
 
