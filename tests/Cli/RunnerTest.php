@@ -97,7 +97,7 @@ class RunnerTest extends \PHPUnit_Framework_TestCase {
 			$url
 		);
 
-		$result = str_replace("\n", '', $runner->run(10));
+		$result = $runner->run(10);
 		$this->assertCount(10, str_split($result));
 		$fs->unmount();
 	}
