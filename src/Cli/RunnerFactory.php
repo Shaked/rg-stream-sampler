@@ -1,5 +1,4 @@
 <?php
-
 namespace Cli;
 
 final class RunnerFactory {

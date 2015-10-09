@@ -1,5 +1,4 @@
 <?php
-
 namespace Cli;
 
 final class Runner {
@@ -8,6 +7,9 @@ final class Runner {
 	 */
 	private $sampler;
 
+	/**
+	 * @param \Sampler $sampler
+	 */
 	public function __construct(\Sampler $sampler) {
 		$this->sampler = $sampler;
 	}

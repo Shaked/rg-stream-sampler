@@ -1,5 +1,4 @@
 <?php
-
 namespace Sampler;
 
 final class Reservoir implements \Sampler {

@@ -1,5 +1,4 @@
 <?php
-
 namespace Iterator;
 
 final class Stream implements \IteratorAggregate {
@@ -25,7 +24,7 @@ final class Stream implements \IteratorAggregate {
 		}
 
 		while (!feof($stream)) {
-			$line = fgets($stream);
+			$line = fgetc($stream);
 			if (false !== $line) {
 				yield $line;
 			}

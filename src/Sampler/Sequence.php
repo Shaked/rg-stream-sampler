@@ -1,5 +1,4 @@
 <?php
-
 namespace Sampler;
 
 final class Sequence implements \Sampler {
@@ -8,6 +7,9 @@ final class Sequence implements \Sampler {
 	 */
 	private $values;
 
+	/**
+	 * @param array $values
+	 */
 	public function __construct(array $values) {
 		$this->values = $values;
 	}

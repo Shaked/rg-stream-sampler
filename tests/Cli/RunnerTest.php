@@ -39,43 +39,43 @@ class RunnerTest extends \PHPUnit_Framework_TestCase {
 		return [
 			[
 				SamplerBuilder::ALGO_SEQ,
-				"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG",
+				'THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG',
 				5,
 				0,
 				5,
 			], [
 				SamplerBuilder::ALGO_RES,
-				"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG",
+				'THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG',
 				5,
 				0,
 				5,
 			], [
 				SamplerBuilder::ALGO_RES,
-				"",
+				'',
 				5,
 				10, //random
 				5,
 			], [
 				SamplerBuilder::ALGO_SEQ,
-				"THEQUICK",
+				'THEQUICK',
 				8,
 				0,
 				8,
 			], [
 				SamplerBuilder::ALGO_RES,
-				"THEQUICK",
+				'THEQUICK',
 				8,
 				0,
 				8,
 			], [
 				SamplerBuilder::ALGO_SEQ,
-				"THEQUICK",
+				'THEQUICK',
 				10,
 				0,
 				8,
 			], [
 				SamplerBuilder::ALGO_RES,
-				"THEQUICK",
+				'THEQUICK',
 				10,
 				0,
 				8,
@@ -84,20 +84,20 @@ class RunnerTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testRunWithUrl() {
-		$data = implode(PHP_EOL, str_split("THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG"));
+		$data = implode(PHP_EOL, str_split('THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG'));
 		$fs = FileSystem::factory('vfs://');
 		$fs->mount();
 
 		$stream = new Directory(['input' => new File($data)]);
 		$fs->get('/')->add('stream.url', $stream);
 
-		$url = "vfs://stream.url/input";
+		$url = 'vfs://stream.url/input';
 		$runner = $this->runnerFactory->create(
 			SamplerBuilder::ALGO_RES,
 			$url
 		);
 
-		$result = str_replace("\n", "", $runner->run(10));
+		$result = str_replace("\n", '', $runner->run(10));
 		$this->assertCount(10, str_split($result));
 		$fs->unmount();
 	}

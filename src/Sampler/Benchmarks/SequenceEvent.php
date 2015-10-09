@@ -1,5 +1,4 @@
 <?php
-
 namespace Sampler\Benchmarks;
 
 use \Athletic\AthleticEvent;

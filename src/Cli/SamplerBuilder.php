@@ -1,5 +1,4 @@
 <?php
-
 namespace Cli;
 
 use \Sampler\Reservoir;
@@ -15,21 +14,16 @@ final class SamplerBuilder {
 	 */
 	private $random;
 
-	const ALGO_SEQ = "seq";
-	const ALGO_RES = "res";
+	const ALGO_SEQ = 'seq';
+	const ALGO_RES = 'res';
 
+	/**
+	 * @param $algorithm
+	 * @param $input
+	 */
 	public function __construct($algorithm, $input) {
 		$this->algorithm = $algorithm;
 		$this->input = $input;
-	}
-
-	/**
-	 * @param int $random
-	 * @return SamplerBuilder
-	 */
-	public function setRandom($random) {
-		$this->random = $random;
-		return $this;
 	}
 
 	/**
@@ -56,6 +50,15 @@ final class SamplerBuilder {
 		}
 
 		return new Reservoir($iterator);
+	}
+
+	/**
+	 * @param int $random
+	 * @return SamplerBuilder
+	 */
+	public function setRandom($random) {
+		$this->random = $random;
+		return $this;
 	}
 
 }
